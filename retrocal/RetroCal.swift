@@ -46,13 +46,29 @@ class RetroCal: UIViewController {
         
     }
 
+    var flag = 1
     
     @IBAction func clearButtonPressed(_ sender: Any) {
-        currentOperation = Operations.empty
-        runningNumber = ""
-        leftValueStr = ""
-        rightValueStr = ""
-        outputLabel.text = "0.0"
+        if outputLabel.text == "0.0"{
+        
+        }
+        else{
+            if flag == 2{
+                currentOperation = Operations.empty
+                runningNumber = ""
+                leftValueStr = ""
+                rightValueStr = ""
+                outputLabel.text = "0.0"
+                flag = 0
+            }
+            else{
+                runningNumber = ""
+                rightValueStr = ""
+                outputLabel.text = "0"
+                flag += 1
+            }
+        }
+        
     }
     
     @IBAction func operatorButtonPressed(btn: UIButton){
